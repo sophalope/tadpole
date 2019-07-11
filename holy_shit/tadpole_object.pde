@@ -13,7 +13,7 @@ float segLength = 100;
     easing = 0.05;
   }
   void display() {
-    stroke(255);
+    stroke(0);
     angle = atan2(- (mouseY - height/2), -(mouseX - width/2) );
    
    //ellipse(x, y, 60, 60);
@@ -46,6 +46,7 @@ float segLength = 100;
   }
   
   void wiggle(){
+    background(255);
     for(int i = 0; i < 50; i++) {
      beginShape();
     for(float w = x; w < x + segLength; w += 5) {
