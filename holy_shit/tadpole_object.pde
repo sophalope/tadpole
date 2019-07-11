@@ -13,9 +13,10 @@ float segLength = 100;
     easing = 0.05;
   }
   void display() {
+    stroke(255);
     angle = atan2(- (mouseY - height/2), -(mouseX - width/2) );
-    //noStroke();
-    ellipse(x, y, 60, 60);
+   
+   //ellipse(x, y, 60, 60);
     //pushMatrix();
    translate(x,y);
    pushMatrix();
@@ -45,11 +46,11 @@ float segLength = 100;
   }
   
   void wiggle(){
-    for(int i = 0; i < 3; i++) {
+    for(int i = 0; i < 50; i++) {
      beginShape();
     for(float w = x; w < x + segLength; w += 5) {
       float h = y;
-      h += 200 * sin(w * 0.02 * TWO_PI / 3) * pow(abs(sin(w * 0.001 + (pmouseY-mouseY) * 0.02 + (pmouseX-mouseX) * 0.02)), 5);
+      h += 10 * sin(w * 0.02 * TWO_PI / 3) * pow(abs(sin(w * 0.001 + (pmouseY-mouseY) * 0.02 + (pmouseX-mouseX) * 0.02)), 5);
       curveVertex(w, h);
       segment(h,w,angle);
     }    
